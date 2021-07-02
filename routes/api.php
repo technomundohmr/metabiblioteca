@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrcidApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('orcid/create',[OrcidApiController::class, 'create']);
+Route::get('orcid/list',[OrcidApiController::class, 'list']);
+Route::post('orcid/{orcid}',[OrcidApiController::class, 'delete']);
+Route::get('orcid/{orcid}',[OrcidApiController::class, 'show']);

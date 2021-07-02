@@ -15,6 +15,11 @@ class CreateOrcidUsersTable extends Migration
     {
         Schema::create('orcid_users', function (Blueprint $table) {
             $table->id();
+            $table->string('ORCID');
+            $table->string('Name')->nullable();
+            $table->string('Lastname')->nullable();
+            $table->string('Keywords')->nullable();
+            $table->string('Email')->nullable();
             $table->timestamps();
         });
     }
